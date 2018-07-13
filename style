@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script type="text/javascript">
+      function submitScore() {
+        // retrieve html elements by ID already on the page prepared for modfying
+        var scoresList = document.getElementById('scoreList');
+        var scoreInput = document.getElementById('scoreInput');
+
+        // create a new <li> element to append to the list and store it in 'li'
+        var li = document.createElement('li');
+
+
+        // check to see if the value in the input box is a number
+        if (parseInt(scoreInput.value)) {
+          // append the score in scoreInput to the new list element
+          li.appendChild(document.createTextNode(scoreInput.value));
+          // append the <li> element we created earlier to the scoreList
+          scoresList.appendChild(li);
+          // clear the input box by setting the value to nothing
+          scoreInput.value = "";
+        } else {
+          // alert the user with a popup if there is not a number in the input box
+          alert("please enter a number into the score input box")
+        }
+      }
+    </script>
+  </head>
+
+  <title></title>
+
+  <body>
+    <br /><br /><br /><br /><br /><br />
+
+    <input id="scoreInput" type="text" name="score" />
+    <input type="submit" value="submit" onclick="submitScore();" />
+
+    <br /><br />
+    <ol id="scoreList">
+      <lh>Scores (type in a score and submit to see them below)</lh>
+    </ol>
+  </body>
+
+</html>
+
+Navbar.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta lang="en">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./navbar.css" />
+    <title>My navbar</title>
+  </head>
+
+  <body>
+    <br /> <!-- LINE BREAK -->
+    <div class="navbar">
+      <ul class="navlinks">
+        <li><a href="#link1">link 1</a></li>
+        <li><a href="#link2">link 2</a></li>
+        <li><a href="#link3">link 3</a></li>
+      </ul> <!-- END NAVLINKS UL -->
+    </div> <!-- END NAVBAR DIV -->
+    <br /> <!-- LINE BREAK -->
+  </body>
+
+</html>
+
+
+Navbar.css
+
+div.navbar {
+  margin-top: 25%;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  text-align: center;
+}
+
+ul.navlinks {
+  padding: 10px;
+  background-color: inherit;
+}
+
+ul.navlinks > li {
+  padding: 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  display: inline-block;
+  list-style-type: none;
+}
+
+ul.navlinks > li > a {
+  color: white;
+  text-decoration: none;
+}
